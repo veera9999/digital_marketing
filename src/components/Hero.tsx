@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import jumbo1 from "../assets/jumbo-1.jpg";
 import jumbo2 from "../assets/jumbo-2.jpg";
 import jumbo3 from "../assets/jumbo-3.jpg";
+import "../index.css";
 
 const images = [jumbo1, jumbo2, jumbo3];
 
@@ -16,25 +17,17 @@ function Hero() {
   }, []);
 
   return (
-    <section
-      id="hero"
-      className="min-h-screen flex flex-col justify-center items-center bg-black text-white mt-16">
-      <div className="w-full h-[500px] overflow-hidden relative">
+    <section id="hero" className="hero-section">
+      <div className="hero-image-container">
         <img
           src={images[current]}
           alt={`jumbotron-${current}`}
-          className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
+          className="hero-image"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-4">
-          <h1 className="text-4xl sm:text-6xl font-bold text-[#FF2800]">
-            Welcome to RedChil
-          </h1>
-          <p className="mt-4 text-lg sm:text-xl text-yellow-500">
-            Driving Your Business to Success
-          </p>
-          <button className="mt-8 px-6 py-3 bg-[#FF2800] text-white rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300 focus:outline-none">
-            Get Started
-          </button>
+        <div className="hero-overlay">
+          <h1 className="hero-title">Welcome to RedChil</h1>
+          <p className="hero-subtitle">Driving Your Business to Success</p>
+          <button className="hero-button">Get Started</button>
         </div>
       </div>
     </section>

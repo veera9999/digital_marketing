@@ -1,67 +1,110 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { AiFillGithub, AiFillMail } from "react-icons/ai";
-
-import { FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaPhone,
+  FaEnvelope,
+} from "react-icons/fa";
+import "../index.css";
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
-
-  const handleOpenGmail = () => {
-    const email = "veera.palla919@gmail.com";
-    const subject = encodeURIComponent("Subject Here"); // You can customize the subject if needed
-    const body = encodeURIComponent("Body Here"); // You can customize the body if needed
-    window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
-      "_blank"
-    );
-  };
-
   return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" />
+    <>
+      {/* Footer Section */}
+      <footer className="pro-footer fade-in">
+        <div className="footer-container">
+          {/* Branding */}
+          <div className="footer-col">
+            <div className="footer-logo-row">
+              <img
+                src="/redchilli.jpg"
+                alt="RedChil Logo"
+                className="footer-logo-img"
+              />
+              <h2 className="footer-brand-name">RedChil</h2>
+            </div>
+            <p className="footer-address">
+              999 Hot Pepper Blvd
+              <br />
+              Atlanta, GA 30303
+            </p>
+            <p className="footer-contact">
+              <FaPhone className="footer-icon" /> (123) 456-7890
+            </p>
+            <p className="footer-contact">
+              <FaEnvelope className="footer-icon" /> info@redchil.io
+            </p>
+          </div>
 
-        <Col md="4" className="footer-copyright">
-          <h3>Copyright © {year} RedChil</h3>
-        </Col>
+          {/* Services */}
+          <div className="footer-col">
+            <h3 className="footer-title">Our Services</h3>
+            <ul>
+              <li>Web Design</li>
+              <li>SEO & Paid Ads</li>
+              <li>Marketing Automation</li>
+              <li>Brand Strategy</li>
+            </ul>
+          </div>
 
-        <Col md="4" className="footer-body">
-          <ul>
-            <li className="social-icons">
-              <a
-                className="footer-social-icons"
-                href="https://github.com/veera9999"
-                target="_blank"
-                rel="noopener noreferrer">
-                <AiFillGithub />
+          {/* Quick Links + Social */}
+          <div className="footer-col">
+            <h3 className="footer-title">Quick Links</h3>
+            <ul>
+              <li>
+                <a href="#hero">Home</a>
+              </li>
+              <li>
+                <a href="#services">Services</a>
+              </li>
+              <li>
+                <a href="#portfolio">Portfolio</a>
+              </li>
+              <li>
+                <a href="#contact">Contact Us</a>
+              </li>
+              <li>
+                <a href="#">Terms & Conditions</a>
+              </li>
+            </ul>
+            <div className="footer-socials">
+              <a href="#">
+                <FaFacebookF />
               </a>
-            </li>
-            <li className="social-icons">
-              <a
-                className="footer-social-icons"
-                href="https://www.linkedin.com/in/veera-palla-6097071b8/"
-                target="_blank"
-                rel="noopener noreferrer">
+              <a href="#">
+                <FaTwitter />
+              </a>
+              <a href="#">
+                <FaInstagram />
+              </a>
+              <a href="#">
                 <FaLinkedinIn />
               </a>
-            </li>
-            <li className="social-icons">
-              <a
-                className="footer-social-icons"
-                href="gmailto:veera.palla919@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleOpenGmail}>
-                <AiFillMail />
-              </a>
-            </li>
-          </ul>
-        </Col>
-        <Col md="4" className="footer-body" />
-      </Row>
-    </Container>
+            </div>
+          </div>
+
+          {/* Newsletter */}
+          <div className="footer-col">
+            <h3 className="footer-title">Subscribe</h3>
+            <p className="newsletter-text">
+              Get marketing tips & fresh ideas delivered to your inbox.
+            </p>
+            <form
+              className="newsletter-form"
+              onSubmit={(e) => e.preventDefault()}>
+              <input type="email" placeholder="Your email" required />
+              <button type="submit">Join</button>
+            </form>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="footer-bottom-bar">
+          <p>© {new Date().getFullYear()} RedChil. All copyrights reserved.</p>
+        </div>
+      </footer>
+    </>
   );
 }
 

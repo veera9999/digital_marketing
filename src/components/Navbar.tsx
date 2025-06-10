@@ -1,23 +1,24 @@
-import logo from "../assets/redchil-logo.jpg";
+import { useState } from "react";
+import "../index.css";
+
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="navbar">
-      <img className="navbar-logo" src={logo} alt="logo" />
-      <h1 className="navbar-title">RedChil</h1>
-      <nav className="navbar-links">
-        <a className="navbar-link" href="#hero">
-          Home
-        </a>
-        <a className="navbar-link" href="#services">
-          Services
-        </a>
-        <a className="navbar-link" href="#portfolio">
-          Portfolio
-        </a>
-        <a className="navbar-link" href="#contact">
-          Contact
-        </a>
+      <div className="logo-container">
+        <img src="/redchilli.jpg" alt="RedChil Logo" className="logo-img" />
+        <span className="logo-text">RedChil</span>
+      </div>
+      <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
       </nav>
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
     </header>
   );
 }

@@ -6,14 +6,19 @@ import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import About from "./components/About";
+import ScrollEffect from "./components/ScrollEffect";
+
 import "./index.css";
 
 function App() {
   return (
     <Provider store={store}>
       <div className="app-container">
+        <ScrollEffect />
         <Navbar />
         <Hero />
+        <About />
         <Services />
         <Portfolio />
         <Contact />
