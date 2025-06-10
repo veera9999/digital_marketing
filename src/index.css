@@ -1,0 +1,178 @@
+/* Variables for easy theming */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #1abc9c;
+  --text-light: #ecf0f1;
+  --text-dark: #2d3436;
+  --footer-bg: #f0f0f0;
+  --green-0: #16a085;
+  --green-1: #1abc9c;
+  --green-2: #27ae60;
+  --green-3: #2ecc71;
+  --footer-social-icons: #34495e;
+}
+
+/* Base Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+  color: var(--text-dark);
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ecf0f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--green-2);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-3);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar-title {
+  font-size: 1.5em;
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-left: 1em;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.navbar-link {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-link:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--footer-bg);
+  padding: 1.5em 1em;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  margin-top: auto;
+}
+
+.footer h3 {
+  font-size: 1em;
+  color: var(--text-dark);
+  margin: 0.5em 0;
+}
+
+.footer-copywright {
+  color: var(--text-dark);
+}
+
+.footer-body {
+  padding: 1em 0;
+}
+
+.footer-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2em;
+  font-size: 1.4rem;
+  color: var(--footer-social-icons);
+}
+
+.footer-icons {
+  margin: 0.5em 0;
+}
+
+.social-icons {
+  padding: 0 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.social-icons:hover {
+  color: var(--green-1);
+}
+
+.icon-colour {
+  color: var(--green-1);
+}
+
+.quote-about,
+.blockquote-footer {
+  color: var(--green-0);
+  font-style: italic;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+    margin-top: 1em;
+  }
+
+  .footer-body,
+  .footer-copywright {
+    text-align: center;
+  }
+}
