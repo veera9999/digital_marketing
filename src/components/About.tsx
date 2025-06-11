@@ -1,8 +1,24 @@
+import { useEffect, useRef, useState } from "react";
 import "../index.css";
 
 function About() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="about-section fade-in" id="about">
+    <section
+      ref={ref}
+      className={`about-section ${isVisible ? "visible-slide-right" : ""}`}
+      id="about">
       <div className="about-container">
         {/* LEFT: Text */}
         <div className="about-content">

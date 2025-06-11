@@ -7,8 +7,11 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="logo-container">
-        <img src="/redchilli.jpg" alt="RedChil Logo" className="logo-img" />
-        <span className="logo-text">RedChil</span>
+        <img
+          src="../assets/redChil_nobg.jpg"
+          alt="RedChil Logo"
+          className="logo-img"
+        />
       </div>
       <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
         <a href="#hero">Home</a>

@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import ScrollEffect from "./components/ScrollEffect";
+import FeatureOverview from "./components/FeatureOverview";
 
 import "./index.css";
 
@@ -18,6 +19,7 @@ function App() {
         <ScrollEffect />
         <Navbar />
         <Hero />
+        <FeatureOverview />
         <About />
         <Services />
         <Portfolio />
