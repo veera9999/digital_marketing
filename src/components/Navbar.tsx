@@ -1,17 +1,13 @@
 import { useState } from "react";
 import "../index.css";
-
+import redchill_logo from "../assets/images/RedChil_nobg.jpg";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="navbar">
       <div className="logo-container">
-        <img
-          src="../assets/redChil_nobg.jpg"
-          alt="RedChil Logo"
-          className="logo-img"
-        />
+        <img src={redchill_logo} alt="RedChil Logo" className="logo-img" />
       </div>
       <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
         <a href="#hero">Home</a>

@@ -1,37 +1,44 @@
-import { useEffect, useState } from "react";
-import jumbo1 from "../assets/jumbo-1.jpg";
-import jumbo2 from "../assets/jumbo-2.jpg";
-import jumbo3 from "../assets/jumbo-3.jpg";
+import React from "react";
+import { motion } from "framer-motion";
 import "../index.css";
+import herobg from "../assets/videos/herobg.mp4";
+interface HeroProps {
+  ctaText?: string;
+  onClickCTA?: () => void;
+}
 
-const images = [jumbo1, jumbo2, jumbo3];
-
-function Hero() {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
+const Hero: React.FC<HeroProps> = ({
+  ctaText = "Let’s Get Started",
+  onClickCTA,
+}) => {
   return (
-    <section id="hero" className="hero-section">
-      <div className="hero-image-container">
-        <img
-          src={images[current]}
-          alt={`jumbotron-${current}`}
-          className="hero-image"
+    <motion.section
+      className="hero-section"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1, ease: "easeOut" }}>
+      <div className="hero-video-container">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="hero-video"
+          src={herobg}
         />
         <div className="hero-overlay">
           <h1 className="hero-title">Welcome to RedChil</h1>
-          <p className="hero-subtitle">Driving Your Business to Success</p>
-          <button className="hero-button">Get Started</button>
+          <p className="hero-subtitle">
+            Igniting your digital presence with flair
+          </p>
+          <button className="hero-button" onClick={onClickCTA}>
+            {ctaText}
+          </button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
-}
+};
 
 export default Hero;

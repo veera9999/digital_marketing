@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import ScrollEffect from "./components/ScrollEffect";
+import Team from "./components/Team";
 import FeatureOverview from "./components/FeatureOverview";
 
 import "./index.css";
@@ -23,6 +24,7 @@ function App() {
         <About />
         <Services />
         <Portfolio />
+        <Team />
         <Contact />
         <Footer />
       </div>

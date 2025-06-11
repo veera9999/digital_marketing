@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "../index.css";
-
+import about_img from "../assets/images/about1.svg";
 function About() {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -44,10 +44,7 @@ function About() {
 
         {/* RIGHT: Image */}
         <div className="about-image">
-          <img
-            src="https://undraw.co/api/illustrations/digital-marketing-re-6mlm.svg"
-            alt="Marketing Strategy Illustration"
-          />
+          <img src={about_img} alt="Marketing Strategy Illustration" />
         </div>
       </div>
 
