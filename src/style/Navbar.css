@@ -1,0 +1,82 @@
+/* 🔷 RedChil Dark Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #0a1a2f; /* Dark Navy Blue */
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔥 Logo Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 42px;
+  margin-right: 12px;
+}
+
+.logo-text {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #38bdf8; /* Sky Blue Accent */
+  font-family: "Segoe UI", sans-serif;
+  letter-spacing: 1px;
+}
+
+/* 🔗 Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #38bdf8; /* Sky Blue */
+}
+
+/* 🍔 Hamburger for Mobile */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* 📱 Responsive Nav */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #0a1a2f;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .nav-links.open {
+    max-height: 300px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

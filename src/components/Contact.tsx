@@ -1,31 +1,37 @@
-export default function Contact() {
+import React from "react";
+import { motion } from "framer-motion";
+import "../style/Contact.css";
+
+const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-ferrariRed">
-      <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold text-white">Contact Us</h2>
-        <form className="mt-8 max-w-md mx-auto">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full p-3 mb-4 rounded-lg"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full p-3 mb-4 rounded-lg"
-          />
-          <textarea
-            placeholder="Your Message"
-            className="w-full p-3 mb-4 rounded-lg"
-            rows={4}
-          />
-          <button
-            type="submit"
-            className="px-6 py-3 bg-ferrariGold text-black rounded-lg hover:bg-white transition duration-300">
-            Send Message
-          </button>
-        </form>
-      </div>
-    </section>
+    <motion.section
+      className="contact-section"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      id="contact">
+      <h2 className="contact-title">Let's Connect</h2>
+      <p className="contact-subtitle">
+        Have a project in mind? Drop us a message and let’s make magic happen.
+      </p>
+
+      <form className="contact-form">
+        <div className="form-group">
+          <input type="text" placeholder="Your Name" required />
+        </div>
+        <div className="form-group">
+          <input type="email" placeholder="Your Email" required />
+        </div>
+        <div className="form-group">
+          <textarea rows={5} placeholder="Your Message" required />
+        </div>
+        <button type="submit" className="contact-btn">
+          Send Message
+        </button>
+      </form>
+    </motion.section>
   );
-}
+};
+
+export default Contact;

@@ -6,7 +6,7 @@ import {
   FaPhone,
   FaEnvelope,
 } from "react-icons/fa";
-import "../index.css";
+import "../style/Footer.css";
 
 function Footer() {
   return (

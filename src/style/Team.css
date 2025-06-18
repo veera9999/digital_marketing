@@ -1,0 +1,137 @@
+.team-legend-section {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.team-legend-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0a1a2f;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.team-nav-btn {
+  font-size: 2rem;
+  font-weight: bold;
+  background: #0a1a2f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.team-nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.team-nav-btn:hover:not(:disabled) {
+  background-color: #f47820;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.team-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.team-legend-card {
+  background: #f8fafc;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  transition: transform 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.team-legend-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(244, 120, 32, 0.3);
+}
+
+.team-legend-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-legend-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.team-legend-card:hover .team-legend-img {
+  transform: scale(1.1);
+}
+
+.team-hover-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(10, 26, 47, 0.75);
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.team-legend-card:hover .team-hover-overlay {
+  opacity: 1;
+}
+
+.team-legend-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0a1a2f;
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .team-legend-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-legend-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-legend-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-legend-title {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,105 @@
+/* 🔥 RedChil Hero Section */
+.hero-svg {
+  background-color: var(--white);
+  padding: 5rem 2rem;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+}
+
+.hero-svg-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero-svg-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-svg-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0a1a2f; /* Primary Blue */
+}
+
+.hero-svg-text .highlight {
+  color: #f47820; /* Flame Orange */
+}
+
+.hero-svg-text p {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  color: #64748b; /* Slate Gray */
+  line-height: 1.7;
+}
+
+.hero-svg-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-svg-image img {
+  width: 100%;
+  max-width: 420px;
+  transition: transform 0.3s ease;
+}
+
+.hero-svg-image img:hover {
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive Media Queries */
+@media (max-width: 1024px) {
+  .hero-svg-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-svg {
+    padding: 3rem 1.5rem;
+    flex-direction: column;
+  }
+
+  .hero-svg-text {
+    text-align: center;
+  }
+
+  .hero-svg-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-svg-text p {
+    font-size: 1rem;
+  }
+
+  .hero-svg-image img {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-svg {
+    padding: 2rem 1rem;
+  }
+
+  .hero-svg-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-svg-text p {
+    font-size: 0.95rem;
+  }
+
+  .hero-svg-image img {
+    max-width: 250px;
+  }
+}

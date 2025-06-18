@@ -1,42 +1,31 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import "../index.css";
+import "../style/Team.css";
+import team1 from "../assets/images/team/Team1.jpeg";
+import team2 from "../assets/images/team/Team2.jpeg";
+import team3 from "../assets/images/team/Team3.jpeg";
+import team4 from "../assets/images/team/Team4.jpeg";
+import team5 from "../assets/images/team/Team5.jpeg";
+import team6 from "../assets/images/team/Team6.jpeg";
 
 const teamMembers = [
-  {
-    name: "Veera Palla",
-    role: "Founder & CEO",
-    image: "/assets/team/veera.jpg",
-  },
-  {
-    name: "Aarya Menon",
-    role: "Marketing Lead",
-    image: "/assets/team/aarya.jpg",
-  },
-  {
-    name: "Zane Patel",
-    role: "Tech Strategist",
-    image: "/assets/team/zane.jpg",
-  },
-  {
-    name: "Lana Moreau",
-    role: "UI/UX Designer",
-    image: "/assets/team/lana.jpg",
-  },
-  {
-    name: "Tariq Rahman",
-    role: "Lead Developer",
-    image: "/assets/team/tariq.jpg",
-  },
+  { name: "Tanmay", role: "Founder & CEO", image: team1 },
+  { name: "Aarya Menon", role: "Marketing Lead", image: team2 },
+  { name: "Zane Patel", role: "Tech Strategist", image: team3 },
+  { name: "Lana Moreau", role: "UI/UX Designer", image: team4 },
+  { name: "Tariq Rahman", role: "Lead Developer", image: team5 },
+  { name: "Yuna Matsuo", role: "Operations", image: team6 },
 ];
 
 const Team = () => {
   const [startIndex, setStartIndex] = useState(0);
-
-  const visibleMembers = teamMembers.slice(startIndex, startIndex + 3);
+  const itemsPerPage = 4;
+  const visibleMembers = teamMembers.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   const next = () => {
-    if (startIndex + 3 < teamMembers.length) {
+    if (startIndex + itemsPerPage < teamMembers.length) {
       setStartIndex(startIndex + 1);
     }
   };
@@ -48,34 +37,40 @@ const Team = () => {
   };
 
   return (
-    <motion.section
-      className="team-section"
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: "easeOut" }}>
-      <h2 className="team-title">Meet Our Team</h2>
-      <div className="team-carousel">
-        <button className="nav-btn" onClick={prev} disabled={startIndex === 0}>
-          &#8592;
+    <section className="team-legend-section">
+      <h2 className="team-legend-title">Meet the Visionaries Behind RedChil</h2>
+      <div className="team-carousel-controls">
+        <button
+          className="team-nav-btn"
+          onClick={prev}
+          disabled={startIndex === 0}>
+          &lt;
         </button>
-        <div className="team-cards">
+        <div className="team-legend-grid">
           {visibleMembers.map((member, index) => (
-            <div className="team-card" key={index}>
-              <img src={member.image} alt={member.name} className="team-img" />
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
+            <div className="team-legend-card" key={index}>
+              <div className="team-legend-img-wrap">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="team-legend-img"
+                />
+                <div className="team-hover-overlay">
+                  <p className="team-hover-role">{member.role}</p>
+                </div>
+              </div>
+              <h3 className="team-legend-name">{member.name}</h3>
             </div>
           ))}
         </div>
         <button
-          className="nav-btn"
+          className="team-nav-btn"
           onClick={next}
-          disabled={startIndex + 3 >= teamMembers.length}>
-          &#8594;
+          disabled={startIndex + itemsPerPage >= teamMembers.length}>
+          &gt;
         </button>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

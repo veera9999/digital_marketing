@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import "../index.css";
-import about_img from "../assets/images/about1.svg";
+import "../style/About.css";
+import about_img from "../assets/images/about/about1.svg";
 function About() {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);

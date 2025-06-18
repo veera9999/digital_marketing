@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "../index.css";
-import redchill_logo from "../assets/images/RedChil_nobg.jpg";
+import "../style/Navbar.css";
+import redchill_logo from "../assets/images/logo/redchil_logo_svg.png";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 

@@ -1,0 +1,138 @@
+/* ========================= 🔹 About Section (RedChil Theme) ========================= */
+.about-section {
+  background-color: var(--bg-light);
+  padding: 5rem 1.5rem;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.visible-slide-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-heading {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0a1a2f; /* Deep Blue */
+}
+
+.about-subheading {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #f47820; /* Flame Orange */
+  margin-top: 0.5rem;
+}
+
+.about-underline {
+  width: 70px;
+  height: 4px;
+  background-color: #f47820;
+  margin: 1rem 0;
+}
+
+.about-paragraph {
+  color: #334155;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+.about-button {
+  background-color: #f47820;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-button:hover {
+  background-color: #38bdf8; /* Sky blue */
+  color: #0a1a2f;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* About Image */
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* 🔹 Bottom Highlight Strip */
+.about-highlight-strip {
+  margin-top: 5rem;
+  background-color: #0a1a2f;
+  color: #f1f5f9;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.about-highlight-strip h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: #f47820;
+}
+
+.about-highlight-strip p {
+  font-size: 1.05rem;
+  color: #e2e8f0;
+}
+
+.about-tags {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.about-tags span {
+  background-color: #334155;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #f1f5f9;
+  transition: all 0.3s ease;
+}
+
+.about-tags span:hover {
+  background-color: #f47820;
+  color: white;
+}
+
+/* 📱 Responsive Styling */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    margin-top: 2rem;
+  }
+}

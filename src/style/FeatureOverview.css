@@ -1,0 +1,136 @@
+/* ================== 🔶 Feature Overview Section (RedChil Theme) ================== */
+.feature-overview {
+  background: var(--bg-light); /* White */
+  padding: 5rem 1.5rem;
+  color: var(--text-dark); /* Deep Blue */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.5s ease-out;
+}
+
+.feature-overview.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.feature-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.feature-text h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0a1a2f; /* Primary Blue */
+}
+
+.feature-text p {
+  font-size: 1.05rem;
+  margin: 1rem 0 2rem;
+  color: #475569; /* Subtle slate */
+  line-height: 1.6;
+}
+
+.primary-btn {
+  background: #f47820; /* Flame Orange */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #38bdf8; /* Sky Blue */
+  color: #0a1a2f;
+}
+
+/* 💠 Features List Grid */
+.feature-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.feature-card {
+  background: #0593cf;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease-in-out;
+  transform-origin: center;
+  border: 1px solid #e5e7eb;
+}
+
+.feature-card:hover {
+  transform: scale(1.08);
+  background-color: #f47820; /* Flame Orange */
+  color: var(--text-light);
+  z-index: 5;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #f47820;
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  color: white;
+}
+
+.feature-card h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: #0a1a2f;
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover h4 {
+  color: white;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #e7e2dd;
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover p {
+  color: #f9fafb;
+}
+
+/* 📱 Responsive Styling */
+@media (max-width: 768px) {
+  .feature-container {
+    flex-direction: column;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-text {
+    text-align: center;
+  }
+
+  .primary-btn {
+    display: inline-block;
+  }
+}
