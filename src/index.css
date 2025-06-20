@@ -1,13 +1,4 @@
 /* 🔷 RedChil Brand Variables */
-:root {
-  --primary-blue: #1e3a8a;
-  --slate-gray: #64748b;
-  --sky-blue: #38bdf8;
-  --white: #ffffff;
-  --black: #0f172a;
-  --text-light: #f1f5f9;
-  --shadow: rgba(0, 0, 0, 0.15);
-}
 
 /* 🧼 Global Reset */
 * {
@@ -25,11 +16,10 @@ html {
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background-color: var(--white);
-  color: var(--black);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #1a1a1a;
+  background-color: transparent;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* 🖱 Scrollbar Styling */
@@ -61,123 +51,20 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--primary-blue);
-  margin-bottom: 1rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 p {
-  color: var(--slate-gray);
-  font-size: 1rem;
   margin-bottom: 1rem;
+  font-weight: 400;
 }
 
-/* 🔘 Button Styles */
-.button {
-  padding: 0.75rem 1.5rem;
-  background-color: var(--sky-blue);
-  color: var(--white);
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.button:hover {
-  background-color: var(--primary-blue);
-}
-
-/* ✨ Utility: Centering & Spacing */
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-.mt-4 {
-  margin-top: 1rem;
-}
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-/* 🎬 Animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-in-out;
-}
-.fade-in-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 📱 Responsive Breakpoints */
-@media (max-width: 1024px) {
-  html {
-    font-size: 15px;
-  }
-  .container {
-    max-width: 95%;
-  }
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 0.95rem;
-  }
-
-  .button {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  .flex-center {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  html {
-    font-size: 13px;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-  h2 {
-    font-size: 1.25rem;
-  }
-
-  .container {
-    padding: 0 1rem;
-  }
-
-  .button {
-    width: 100%;
-    text-align: center;
-  }
+.vanta-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
 }

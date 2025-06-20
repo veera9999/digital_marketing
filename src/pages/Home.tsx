@@ -9,13 +9,14 @@ import About from "../components/About";
 import ScrollEffect from "../components/ScrollEffect";
 import Team from "../components/Team";
 import FeatureOverview from "../components/FeatureOverview";
-
+import VantaBackground from "../components/VantaBackground";
 import "../index.css";
 
 function Home() {
   return (
     <Provider store={store}>
       <div className="app-container">
+        <VantaBackground />
         <ScrollEffect />
         <Navbar />
         <Hero />

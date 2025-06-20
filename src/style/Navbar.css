@@ -1,79 +1,83 @@
-/* 🔷 RedChil Dark Navbar */
+/* Base navbar styling */
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background-color: #0a1a2f; /* Dark Navy Blue */
-  color: #ffffff;
+  z-index: 999;
+  background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 1.2rem 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* 🔥 Logo Container */
+/* Logo container */
 .logo-container {
   display: flex;
   align-items: center;
 }
 
 .logo-img {
-  height: 42px;
-  margin-right: 12px;
+  height: 45px;
 }
 
-.logo-text {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: #38bdf8; /* Sky Blue Accent */
-  font-family: "Segoe UI", sans-serif;
-  letter-spacing: 1px;
-}
-
-/* 🔗 Navigation Links */
+/* Desktop nav links */
 .nav-links {
   display: flex;
   gap: 2rem;
 }
 
 .nav-links a {
-  color: #ffffff;
+  color: #1a1a1a;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
+  position: relative;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #38bdf8; /* Sky Blue */
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #ff2800;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
 }
 
-/* 🍔 Hamburger for Mobile */
+.nav-links a:hover {
+  color: #ff2800;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger menu */
 .hamburger {
   display: none;
   font-size: 1.8rem;
-  color: #ffffff;
   cursor: pointer;
 }
 
-/* 📱 Responsive Nav */
+/* Responsive styles */
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
     top: 70px;
     right: 0;
-    background-color: #0a1a2f;
+    background-color: #ffffff;
     flex-direction: column;
     width: 100%;
-    padding: 1rem 0;
-    max-height: 0;
-    overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transition: max-height 0.4s ease-in-out;
+    padding: 1rem 2rem;
+    display: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.open {
-    max-height: 300px;
+    display: flex;
   }
 
   .hamburger {
